@@ -1,0 +1,40 @@
+# ARI (Asterisk REST Interface) Configuration
+ari:
+  url: "http://127.0.0.1:8088/ari"
+  wss: "ws://127.0.0.1:8088/ari/events"
+  username: "test_user"
+  password: "test_password"
+  application: "voice-bot-app"  # ARI application name in Asterisk
+
+# Microsoft Speech SDK Configuration
+speech_sdk:
+  subscription_key: "test_key"
+  region: "test_region"
+
+gen_ai:
+  open_ai_key: "open_ai_test_key"
+  pinecone_key: "pinecone_test_key"
+
+# Audio Processing Configuration
+audio:
+  input_buffer_size: 1024       # Buffer size for audio input channel
+  output_buffer_size: 1024      # Buffer size for audio output channel
+  sample_rate: 8000             # Audio sample rate (Hz)
+  channels: 1                   # Number of audio channels (e.g., 1 for mono)
+  encoding: "pcm"               # Audio encoding format
+
+# Logging Configuration
+logging:
+  level: "info"                 # Log level (e.g., debug, info, warn, error)
+  file: "voice-bot.log"         # Log file location (optional)
+
+# Performance Settings
+performance:
+  max_goroutines: 50           # Maximum number of Goroutines for concurrent processing
+  max_queue_size: 1000          # Maximum size of the processing queue
+
+# Miscellaneous Settings
+misc:
+  enable_debug: true           # Enable or disable debug mode
+  reconnect_attempts: 3         # Number of attempts to reconnect to ARI
+  reconnect_interval: 5         # Interval (in seconds) between reconnect attempts
